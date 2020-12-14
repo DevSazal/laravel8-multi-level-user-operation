@@ -19,8 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            
+            $table->boolean('role')->default(0);
+            $table->string('role_type')->default('user');
+            $table->text('profile_photo_path')->nullable();
             $table->rememberToken();
+
             $table->timestamps();
+            $table->softDeletes(); //Recycle Bin with Soft Delete
         });
     }
 
