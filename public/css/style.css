@@ -1,4 +1,4 @@
-.bg-white { background-color: #38eac1 !important; }
+.bg-white { background-color: #fff !important; }
 .mt-10 {
   margin-top: 10px !important;
 }
@@ -6,7 +6,7 @@
   margin-top: 20px !important;
 }
 .card {
-    background-color: #3696e4d9;
+    background-color: #fff;
     background-clip: border-box;
     border: unset;
     border-radius: 0.25rem;
@@ -20,6 +20,17 @@ body .card {
     color: #35d4af;
     text-align: left;
 
+    box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
+}
+body .card .card-body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+
 }
 .card-header {
     padding: 0.75rem 1.25rem;
@@ -29,8 +40,8 @@ body .card {
 }
 
 .card a {
-    color: #ffffff;
-    text-decoration: none;
+    color: #2468ff;
+    /* text-decoration: none; */
     background-color: transparent;
 }
 .app-logo{
@@ -38,4 +49,11 @@ body .card {
 }
 .sp-color{
   color: #faebd7;
+}
+.btn{
+  box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
+}
+.sazal{
+  box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
+  border-radius: 0rem;
 }

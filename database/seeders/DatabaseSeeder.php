@@ -18,9 +18,10 @@ class DatabaseSeeder extends Seeder
         // Calling Additional Seeders
         $this->call([
           UserSeeder::class,
+          PostSeeder::class,
 
         ]);
 
-        $this->command->info('User table seeded!');
+        $this->command->info('User & Post table seeded!');
     }
 }

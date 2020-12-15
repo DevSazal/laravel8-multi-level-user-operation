@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Database\Eloquent\SoftDeletes; // SoftDelete for inactive feature
 
+use App\Models\Post;  // import post
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -50,4 +52,9 @@ class User extends Authenticatable
     * @var array
     */
     protected $dates = ['deleted_at'];
+
+    // use hasMany relation with foreignkey & reduce read query
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 }

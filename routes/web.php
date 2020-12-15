@@ -16,9 +16,9 @@ use App\Http\Controllers\User;
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
-})->middleware('user');
+// Route::get('/', function () {
+//     return view('user.index');
+// })->middleware('user');
 
 Route::get('/register',[User\AuthController::class, 'registerPage']);
 Route::post('/register',[User\AuthController::class, 'registerUser'])->name('register');
@@ -27,3 +27,6 @@ Route::get('/login',[User\AuthController::class, 'loginPage']);
 Route::post('/login',[User\AuthController::class, 'loginUser'])->name('login');
 
 Route::get('/logout',[User\AuthController::class, 'logout'])->name('logout');
+
+Route::get('/',[User\PostController::class, 'index']);
+Route::post('/',[User\PostController::class, 'storePost'])->name('storePost');
