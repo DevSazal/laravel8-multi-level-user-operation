@@ -42,10 +42,13 @@
             <ul class="navbar-nav">
               @auth
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ url('/') }}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn sazal btn-danger btn-sm" href="{{ url('/disable') }}" style="box-shadow: unset">Disable Your Account</a>
                   </li>
               @else
                   <li class="nav-item">

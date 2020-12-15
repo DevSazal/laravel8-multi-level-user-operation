@@ -27,7 +27,10 @@ Route::get('/login',[User\AuthController::class, 'loginPage']);
 Route::post('/login',[User\AuthController::class, 'loginUser'])->name('login');
 
 Route::get('/logout',[User\AuthController::class, 'logout'])->name('logout');
+Route::get('/disable',[User\AuthController::class, 'disable'])->name('disable');
 
 Route::get('/',[User\PostController::class, 'index']);
 Route::post('/',[User\PostController::class, 'storePost'])->name('storePost');
 Route::delete('/post/{id}/delete',[User\PostController::class, 'delete'])->name('post.delete');
+Route::get('/post/{id}',[User\PostController::class, 'show']);
+Route::post('/post/{id}/comment',[User\PostController::class, 'makeComment'])->name('make.comment');

@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes; // SoftDelete for inactive feature
-
 use App\Models\User;  // import post
 
-class Post extends Model
+use Illuminate\Database\Eloquent\Relations\Relation;
+Relation::morphMap([
+  'Post' => 'App\Models\Post',
+  'Comment' => 'App\Models\Comment',
+]);
+
+class Comment extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -21,13 +26,19 @@ class Post extends Model
     */
     protected $dates = ['deleted_at'];
 
-    // use belongsTo relation(Inverse) with foreignkey & reduce read query
-    public function user(){
-        return $this->belongsTo(User::class);
+    //  Polymorphic morphTo relation
+    public function commentable(){
+        return $this->morphTo();
     }
 
     //  Polymorphic morphMany relation
     public function comments(){
         return $this->morphMany('App\Models\Comment', 'commentable');
     }
+
+    // use belongsTo relation(Inverse) with foreignkey & reduce read query
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }

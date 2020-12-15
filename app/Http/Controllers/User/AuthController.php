@@ -91,4 +91,12 @@ class AuthController extends Controller
     return redirect('login');
   }
 
+  public function disable() {
+    $user = User::find(Auth::user()->id);
+    $result = $user->delete();
+    Auth::logout();
+
+    return redirect('login');
+  }
+
 }

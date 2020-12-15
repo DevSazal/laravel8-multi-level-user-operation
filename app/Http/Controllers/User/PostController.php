@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Auth;
 use Validator;
+use App\Models\Comment;
 
 class PostController extends Controller
 {
@@ -83,6 +84,47 @@ class PostController extends Controller
 
       }
     return abort(403, 'Unauthorized action');
+  }
+
+  // Post Show + Comment Logout
+  public function show($id){
+    $array['post'] = Post::find($id);
+    //$array['comments'] = Comment::find($id);
+    return view('user.post')->with($array);
+  }
+
+  public function makeComment($id, Request $request){
+
+    // code...  Data Validation
+    $validator = Validator::make($request->all(), [
+        'comment' => 'required|string|min:2',
+        '_type' => 'required|string|min:2',
+        '_id' => 'required|integer|max:20'
+    ]);
+
+    //
+
+    if ($validator->fails()) {
+        return back()->withErrors($validator)
+                      ->withInput();
+        // return dd($validator->errors());
+    }else {
+
+      $com = new Comment;
+      $com->comment = $request->comment;
+      $com->user_id = Auth::user()->id;
+      $com->commentable_type = $request->_type;
+      $com->commentable_id = $request->_id;
+      $result = $com->save();
+
+        if($result){
+          $request->session()->flash('job', 'Your comment has been published regarding this post');
+          return back();
+        }else{
+          $request->session()->flash('job', 'Comment Operation Failed');
+          return back();
+        }
+    }
   }
 
 
