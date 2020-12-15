@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Add User Directory
 use App\Http\Controllers\User;
 use App\Http\Controllers\Staff;
+use App\Http\Controllers\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,10 @@ Route::get('/staff/users/{key?}',[Staff\UserManageController::class, 'index'])->
 Route::get('/staff/login',[Staff\AuthController::class, 'loginPage']);
 Route::post('/staff/login',[Staff\AuthController::class, 'loginUser'])->name('login.staff');
 Route::get('/staff/logout',[Staff\AuthController::class, 'logout'])->name('logout.staff');
+
+// For Admin Only
+Route::get('/admin/login',[Admin\AuthController::class, 'loginPage']);
+Route::post('/admin/login',[Admin\AuthController::class, 'loginUser'])->name('login.admin');
+Route::get('/admin/logout',[Admin\AuthController::class, 'logout'])->name('logout.admin');
+Route::get('/admin/register',[Admin\AuthController::class, 'registerPage']);
+Route::post('/admin/register',[Admin\AuthController::class, 'registerUser'])->name('register.admin');
