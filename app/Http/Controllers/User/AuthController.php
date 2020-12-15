@@ -96,7 +96,7 @@ class AuthController extends Controller
     $result = $user->delete();
     Auth::logout();
 
-    return redirect('login');
+    return redirect('login')->with('error', 'Okey! Your account disable process is completed, Thank You');
   }
 
 }

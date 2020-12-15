@@ -15,7 +15,7 @@ class PostController extends Controller
   public function __construct(){
     $this->middleware('auth');
   }
-  // control login Post Logout
+  // control Post Logout
   public function index(){
     $array['posts'] = Post::where('active', 1)->orderBy('id', 'desc')->paginate(6);
     return view('user.index')->with($array);
