@@ -15,7 +15,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-      // add default user and admin and staff by Seeder
+      // add default post by Seeder
       DB::table('posts')->insert([
         [
           'message' => 'I hate this app',
