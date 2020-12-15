@@ -43,7 +43,7 @@
 
             @if($post->active === 0)
               <button onclick="$(this).parent().find('#publish').submit()" class="sazal btn btn-warning btn-sm">Publish Post</button>
-              <form id="publish" method="POST" action="{{ route('post.publish.staff', $post->id) }}">
+              <form id="publish" method="POST" action="{{ route('post.publish.admin', $post->id) }}">
                   @method('PUT')
                   @csrf
               </form>
@@ -54,7 +54,7 @@
 
 
             <button onclick="$(this).parent().find('#delete').submit()" class="sazal btn btn-danger btn-sm">Delete</button>
-            <form id="delete" method="POST" action="{{ route('post.delete.staff', $post->id) }}">
+            <form id="delete" method="POST" action="{{ route('post.delete.admin', $post->id) }}">
                 @method('DELETE')
                 @csrf
             </form>
