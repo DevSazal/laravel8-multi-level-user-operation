@@ -66,24 +66,24 @@
               <br>
               <br>
               <div class="">
-                <a href="{{ url('/logout') }}"> @ Logout</a>
+                <a href="{{ url('/staff/logout') }}"> @STAFF Logout</a>
               </div>
               <div class="">
-                <a href="{{ url('/') }}"> ~ Go to Home Page</a>
+                <a href="{{ url('/') }}"> ~ Go to User Home Page</a>
               </div>
           </div>
           @endif
           @if(Auth::user()->role_type === 'admin')
           <div class="col-md-3">
               <div class="list-group">
-                  <a href="{{ url('/staff') }}" class="list-group-item list-group-item-action
-                        @if($segment=='staff' && Request::segment(2)=='')
+                  <a href="{{ url('/admin') }}" class="list-group-item list-group-item-action
+                        @if($segment=='admin' && Request::segment(2)=='')
                           active
                         @endif"><i class="fas fa-arrow-alt-circle-right"></i>
                     Posts (Control)
                   </a>
-                  <a href="{{ url('/staff/users') }}" class="list-group-item list-group-item-action
-                      @if($segment=='staff' && Request::segment(2)=='users')
+                  <a href="{{ url('/admin/users') }}" class="list-group-item list-group-item-action
+                      @if($segment=='admin' && Request::segment(2)=='users')
                         active
                       @endif"><i class="fas fa-arrow-alt-circle-right"></i>
                     Users
@@ -92,10 +92,10 @@
               <br>
               <br>
               <div class="">
-                <a href="{{ url('/logout') }}"> @ Logout</a>
+                <a href="{{ url('/admin/logout') }}"> @Admin Logout</a>
               </div>
               <div class="">
-                <a href="{{ url('/') }}"> ~ Go to Home Page</a>
+                <a href="{{ url('/') }}"> ~ Go to User Home Page</a>
               </div>
           </div>
           @endif

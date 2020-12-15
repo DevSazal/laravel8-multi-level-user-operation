@@ -22,9 +22,9 @@ class admin
           if (auth()->user()->role_type === 'admin'){
               return $next($request);
           }
-          return redirect('/staff/login');
+          return redirect('/admin/login');
       }
-      return redirect('/staff/login');
+      return redirect('/admin/login');
 
     }
 }

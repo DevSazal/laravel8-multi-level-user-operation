@@ -80,6 +80,8 @@ class AuthController extends Controller
       $user->email = $request->email;
       $user->password = Hash::make($request->password);
       $user->profile_photo_path = $file_path;
+      $user->role = 2;
+      $user->role_type = 'admin';
       $result = $user->save();
 
         if($result){

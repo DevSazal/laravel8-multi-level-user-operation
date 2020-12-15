@@ -55,5 +55,8 @@ Route::get('/admin/register',[Admin\AuthController::class, 'registerPage']);
 Route::post('/admin/register',[Admin\AuthController::class, 'registerUser'])->name('register.admin');
 
 Route::get('/admin',[Admin\PostManageController::class, 'index']);
-Route::put('/admin/post/{id}/publish/',[Admin\PostManageController::class, 'publish'])->name('post.publish.admin');
-Route::delete('/admin/post/{id}/delete/',[Admin\PostManageController::class, 'delete'])->name('post.delete.admin');
+Route::put('/admin/post/{id}/publish/',[Admin\PostManageController::class, 'publish'])->name('post.publish.admin')->where('id', '[0-9]+');
+Route::delete('/admin/post/{id}/delete/',[Admin\PostManageController::class, 'delete'])->name('post.delete.admin')->where('id', '[0-9]+');
+Route::get('/admin/users/{key?}',[Admin\UserManageController::class, 'index'])->name('users.admin');
+
+Route::post('/admin/create/staff',[Admin\UserManageController::class, 'createStaff'])->name('assign.staff.admin');

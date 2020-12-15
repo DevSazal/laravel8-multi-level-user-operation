@@ -47,6 +47,16 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
                   </li>
+                  @if(auth()->user()->role_type === 'admin')
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('/admin') }}">Admin Panel</a>
+                    </li>
+                  @endif
+                  @if(auth()->user()->role_type === 'staff')
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('/staff') }}">Staff Panel</a>
+                    </li>
+                  @endif
                   <li class="nav-item">
                     <a class="nav-link btn sazal btn-danger btn-sm" href="{{ url('/disable') }}" style="box-shadow: unset">Disable Your Account</a>
                   </li>

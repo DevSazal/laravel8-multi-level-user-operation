@@ -2,7 +2,7 @@
 
 @extends('layouts.app3')
 
-@section('title', 'App Dashboard - Users ')
+@section('title', 'Staff Panel - Users ')
 
 
 @section('content2')

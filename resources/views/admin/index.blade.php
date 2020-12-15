@@ -2,7 +2,7 @@
 
 @extends('layouts.app3')
 
-@section('title', 'App Dashboard - Post Control')
+@section('title', 'App Dashboard - Post Control (ADMIN) ')
 
 
 @section('content2')
@@ -70,7 +70,8 @@
 
   {{ $posts->links() }}
 
-
+<br>
+<br>
 
 </div>
 
