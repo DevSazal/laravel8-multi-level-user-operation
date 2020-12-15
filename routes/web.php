@@ -30,3 +30,4 @@ Route::get('/logout',[User\AuthController::class, 'logout'])->name('logout');
 
 Route::get('/',[User\PostController::class, 'index']);
 Route::post('/',[User\PostController::class, 'storePost'])->name('storePost');
+Route::delete('/post/{id}/delete',[User\PostController::class, 'delete'])->name('post.delete');

@@ -67,6 +67,24 @@ class PostController extends Controller
     }
   }
 
+  public function delete($id, Request $request){
+
+    if(Auth::user()->role >= 1){
+        $post = Post::find($id);
+        $result = $post->delete();
+
+        if($result){
+          $request->session()->flash('job', 'Post has been deleted');
+          return redirect('/');
+        }else{
+          $request->session()->flash('job', 'Post Delete Operation Failed');
+          return redirect('/');
+        }
+
+      }
+    return abort(403, 'Unauthorized action');
+  }
+
 
 
 }

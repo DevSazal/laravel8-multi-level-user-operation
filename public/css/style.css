@@ -57,3 +57,37 @@ body .card .card-body {
   box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
   border-radius: 0rem;
 }
+.card a.btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: #de443f;
+    border-color: #de443f;
+    box-shadow: rgb(132 125 131) 0px 1px 5px 1px;
+    border-radius: 0rem;
+    margin: 0px 10px;
+}
+.card a.btn:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #de5e5e;
+    border-color: #de5e5e;
+    box-shadow: rgb(215, 232, 253) 0px 1px 5px 1px;
+    border-radius: 0rem;
+}
+.card button.btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: #de443f;
+    border-color: #de443f;
+    box-shadow: rgb(132 125 131) 0px 1px 5px 1px;
+    border-radius: 0rem;
+    margin: 0px 10px;
+}
+.card button.btn:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #de5e5e;
+    border-color: #de5e5e;
+    box-shadow: rgb(215, 232, 253) 0px 1px 5px 1px;
+    border-radius: 0rem;
+}
