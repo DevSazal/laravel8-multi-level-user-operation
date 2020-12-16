@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class admin
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -25,6 +25,5 @@ class admin
           return redirect('/admin/login');
       }
       return redirect('/admin/login');
-
     }
 }
