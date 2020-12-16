@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->longText('message');
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // foreignkey for user table
 
-            $table->boolean('active')->default(0);
+            $table->integer('active')->default(0);
             $table->text('image')->nullable();
 
             $table->timestamps();
